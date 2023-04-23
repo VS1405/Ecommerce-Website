@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import {Container, Row} from 'react-bootstrap'
 import List from './List'
 
@@ -40,7 +40,7 @@ const Item = () => {
   )
 
   return (
-    <Container className='mt-4 mb-4'>
+    <Container className='mt-4 mb-4' id='Home'>
       <Row xs={1} md={2} className="g-4">
         {listOdProduct}
       </Row>
