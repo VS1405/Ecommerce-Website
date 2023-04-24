@@ -1,6 +1,8 @@
-import React from 'react'
-import {Container, Row} from 'react-bootstrap'
-import List from './List'
+import React, { useContext } from 'react'
+import { Container, Row } from 'react-bootstrap'
+import List from './ListOfItem';
+import classes from './Item.module.css'
+import CartContext from '../../Store/Cart-context';
 
 const productsArr = [
   {
@@ -29,19 +31,32 @@ const productsArr = [
   }]
 
 
-const Item = () => {
+const Item = (props) => {
+  const cartCtx = useContext(CartContext)
+
+  const addCartHandler = (amount) => {
+    cartCtx.addItem({
+      id: props.id,
+      title: props.title,
+      price: props.price,
+      amount: amount
+    })
+    console.log(amount)
+    console.log('Item Added to cart')
+  }
 
   const listOdProduct = productsArr.map(item =>
     <List id={item.id}
       title={item.title}
       price={item.price}
       image={item.imageUrl}
+      onAddCart={addCartHandler}
     />
   )
 
   return (
-    <Container className='mt-4 mb-4' id='Home'>
-      <Row xs={1} md={2} className="g-4">
+    <Container className={classes.container} id='Home'>
+      <Row xs={1} md={2} className="g-4 mt-5">
         {listOdProduct}
       </Row>
     </Container>

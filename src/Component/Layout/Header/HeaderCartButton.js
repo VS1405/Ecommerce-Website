@@ -1,11 +1,21 @@
-import React from 'react'
-import { Button } from 'react-bootstrap'
+import React, {useContext} from 'react';
+import {Button} from 'react-bootstrap'
+import classes from './HeaderCartButton.module.css';
+import CartContext from '../../../Store/Cart-context';
 
 const HeaderCartButton = (props) => {
+  const cartCtx = useContext(CartContext);
+// if i wanna increse cart number then i have to add amount not totalAmount
+  const numberOfCartItem = cartCtx.title.reduce((curr, item)=> {
+    return curr + item.amount
+  }, 0);
   return (
-    <>
-      <Button variant="outline-primary" onClick={props.onClicked}>Cart</Button>
-    </>
+    <div>
+      <Button variant="outline-primary" onClick={props.onClicked}>
+       <span>Cart</span> 
+      </Button>
+       <span className={classes.numberNo}>{numberOfCartItem}</span>
+    </div>
   )
 }
 

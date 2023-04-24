@@ -4,13 +4,13 @@ import { Container } from 'react-bootstrap'
 import classes from './Modal.module.css'
 
 const Backdrop = props => {
-    return <div className={classes.backdrop}/>
+    return <div />
     
 }
 
 const ModalOverlay = props => {
     return <Fragment>
-         <div className={classes.modal}>
+         <div >
            <div className={classes.content}>{props.children}</div>
         </div>
     </Fragment>
