@@ -1,23 +1,26 @@
 import React, { useState } from 'react';
-import Header from './Component/Layout/Header/Header';
-import Item from './Component/ItemList/Item';
-
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Header from './Comp/Layouts/Header';
+import AvailableItem from './Comp/Item/AvailavbleItem';
+import Cart from './Comp/Cart/Cart';
 import CartProvider from './Store/CartProvider';
-import Cart from './Component/Layout/Header/Cart/Cart'
+import MainPage from './Comp/Layouts/MainPage';
+import StorePage from './Pages/Store/StorePage';
+import AboutPage from './Pages/About/AboutPage';
 
 function App() {
 
-  const [showCart, setShowCart] = useState(false);
+  const router = createBrowserRouter([
+    {path : '/', element: <MainPage />},
+    {path : '/About', element: <AboutPage />},
+    {path: '/Store', element: <StorePage />}
+  ])
 
-  const ShowCartHandler = () => setShowCart(true)
-  const HideCartShownHandler = () => setShowCart(false);
 
   return (
     <CartProvider>
-      {showCart && <Cart onClose={HideCartShownHandler} />}
-      <Header onShowCart={ShowCartHandler} />
-      <Item />
-
+      <RouterProvider router={router}/>
+      
     </CartProvider>
   );
 }
