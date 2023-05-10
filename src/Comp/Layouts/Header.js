@@ -1,5 +1,5 @@
 import React, { useState, Fragment } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import classes from './Header.module.css'
 import HeaderCartButton from './HeaderCartButton';
 
@@ -10,10 +10,17 @@ const Header = (props) => {
         <nav>
           <ul>
             <li>
-            <Link to="/" className='nav-link active'>Home</Link>
+            <NavLink to="/" activeClassName={classes.active} >Home</NavLink>
             </li>
-            <li><Link to="/Store" className='nav-link active'>Store</Link></li>
-            <li><Link to="/About" className='nav-link active'>About</Link></li>
+            <li>
+              <NavLink to="/Store" activeClassName={classes.active} >Store</NavLink>
+            </li>
+            <li>
+              <NavLink to="/About" activeClassName={classes.active} >About</NavLink>
+            </li>
+            <li>
+              <NavLink to="/Contact" activeClassName={classes.active} >Contact Us</NavLink>
+              </li>
           </ul>
         </nav>
         <div className={classes.button}>

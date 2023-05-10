@@ -26,9 +26,10 @@
     font-family: 'Times New Roman', Times, serif;
   }
   
-  .header a.active,
-  .header a:active,
-  .header a:hover {
+ 
+  .header a:active, 
+  .header a:hover, 
+  .header a.active {
     border-bottom: 2px solid #e4d317;
   }
   

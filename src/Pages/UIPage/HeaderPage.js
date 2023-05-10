@@ -1,6 +1,6 @@
 import React, { useState, Fragment } from 'react';
-import { Link } from 'react-router-dom';
-import classes from './Header.module.css'
+import { NavLink } from 'react-router-dom';
+import classes from './HeaderPage.module.css'
 
 
 const HeaderPage = () => {
@@ -10,10 +10,17 @@ const HeaderPage = () => {
         <nav>
           <ul>
             <li>
-            <Link to="/" className='nav-link active'>Home</Link>
+            <NavLink to="/" activeClassName={classes.active} className='nav-link active'>Home</NavLink>
             </li>
-            <li><Link to="/Store" className='nav-link active'>Store</Link></li>
-            <li><Link to="/About" className='nav-link active'>About</Link></li>
+            <li>
+              <NavLink to="/Store" activeClassName={classes.active} className='nav-link active'>Store</NavLink>
+              </li>
+            <li>
+              <NavLink to="/About" activeClassName={classes.active} className='nav-link active'>About</NavLink>
+            </li>
+            <li>
+              <NavLink to="/Contact" activeClassName={classes.active} className='nav-link active'>Contact Us</NavLink>
+              </li>
           </ul>
         </nav>
        

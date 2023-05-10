@@ -3,6 +3,7 @@ import classes from './AboutDetails.module.css'
 import Footer from '../UIPage/Footer';
 
 const AboutDetails = () => {
+    
     return (
         <div className={classes.container}>
             <div className={classes.header}>

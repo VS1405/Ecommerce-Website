@@ -1,0 +1,45 @@
+.control {
+    margin: 0 auto;
+    margin-top: 10rem;
+    width: 30%;
+}
+
+.control label {
+    display: block;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+    text-align: left;
+}
+
+.control .button button {
+    margin: 0 auto;
+    display: block;
+    margin-top: 1rem;
+    border: 1px solid rgb(40, 123, 206);
+    border-radius: 12px;
+    font-weight: bold;
+    /* padding: 3px 7px; */
+}
+
+button:hover {
+    background-color: rgb(40, 123, 206);
+    color: white;
+}
+
+.control input,
+.control textarea {
+    display: block;
+    width: 100%;
+    font: inherit;
+    padding: 0.2rem;
+    padding-left: 0.4rem;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+}
+
+.control input:focus,
+.control textarea:focus {
+    outline: none;
+    border-color: #230052;
+}
