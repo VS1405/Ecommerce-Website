@@ -10,20 +10,23 @@ const HeaderPage = () => {
         <nav>
           <ul>
             <li>
-            <NavLink to="/" activeClassName={classes.active} className='nav-link active'>Home</NavLink>
+              <NavLink to="/" activeClassName={classes.active} className='nav-link active'>Home</NavLink>
             </li>
             <li>
               <NavLink to="/Store" activeClassName={classes.active} className='nav-link active'>Store</NavLink>
-              </li>
+            </li>
             <li>
               <NavLink to="/About" activeClassName={classes.active} className='nav-link active'>About</NavLink>
             </li>
             <li>
               <NavLink to="/Contact" activeClassName={classes.active} className='nav-link active'>Contact Us</NavLink>
-              </li>
+            </li>
+            <li>
+              <NavLink to="/Products" activeClassName={classes.active} >Products</NavLink>
+            </li>
           </ul>
         </nav>
-       
+
       </header>
     </Fragment>
   )

@@ -5,6 +5,7 @@ import MainPage from './Comp/Layouts/MainPage';
 import StorePage from './Pages/Store/StorePage';
 import AboutPage from './Pages/About/AboutPage';
 import Contact from './Pages/ContactPage/Contact';
+import ProductPage from './Pages/ProductsPage/ProductPage';
 
 function App() {
 
@@ -12,7 +13,8 @@ function App() {
     {path : '/', element: <MainPage />},
     {path : '/About', element: <AboutPage />},
     {path: '/Store', element: <StorePage />},
-    {path: '/Contact', element: <Contact />}
+    {path: '/Contact', element: <Contact />},
+    {path: '/Products', element: <ProductPage />}
   ])
 
 

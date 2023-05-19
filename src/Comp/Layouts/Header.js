@@ -21,6 +21,9 @@ const Header = (props) => {
             <li>
               <NavLink to="/Contact" activeClassName={classes.active} >Contact Us</NavLink>
               </li>
+            <li>
+              <NavLink to="/Products" activeClassName={classes.active} >Products</NavLink>
+              </li>
           </ul>
         </nav>
         <div className={classes.button}>

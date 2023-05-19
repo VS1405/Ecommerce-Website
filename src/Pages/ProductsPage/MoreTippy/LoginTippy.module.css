@@ -1,0 +1,50 @@
+.Main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    font-weight: 5px;
+    padding: 8px 10px;
+}
+.in-div{
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 5px;
+    padding-bottom: -5px;
+    display: flex;
+    justify-content:flex-start;
+    font-size: 0.8rem;
+    align-content: center;
+}
+.in-div> .MuiSvgIcon-root{
+    margin-right: 5px;
+    color: rgb(47, 102, 206);
+}
+.in-div> .signUp{
+color: rgb(47, 102, 206);
+padding-bottom: 4px;
+margin-left: 2rem;
+font-size: 0.9rem;
+}
+.in-div> .login{
+    padding-bottom: 4px;
+    font-size: 0.8rem;
+}
+.in-div > p{
+    margin-left: 10px;
+}
+.Main> hr{
+margin-left: -10px;
+margin-top: 0px;
+margin-bottom: 0px;
+width: 108.5%;
+background-color: lightgray;
+border: none;
+}
+.in-div:hover{
+    cursor: pointer;
+    background-color: rgb(245, 243, 243);
+}
+.in-div> .login:hover{
+    cursor: pointer;
+}
