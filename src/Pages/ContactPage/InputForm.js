@@ -1,5 +1,4 @@
 import React, { useRef } from 'react'
-import { Form } from 'react-router-dom'
 import classes from './InputForm.module.css'
 
 const InputForm = (props) => {
@@ -21,25 +20,25 @@ const InputForm = (props) => {
     }
 
     return (
-        <Form onSubmit={submitHandler}>
+        <form onSubmit={submitHandler}>
             <div className={classes.control}>
-            <div>
-                <label htmlFor='name'>Name</label>
-                <input id='name' type='text' placeholder='Enter Name' ref={NameRef} />
+                <div>
+                    <label htmlFor='name'>Name</label>
+                    <input id='name' type='text' placeholder='Enter Name' ref={NameRef} />
+                </div>
+                <div>
+                    <label htmlFor='name'>Email</label>
+                    <input id='name' type='email' placeholder='Enter email address' ref={EmailRef} />
+                </div>
+                <div>
+                    <label htmlFor='name'>Phone No.</label>
+                    <input id='name' type='number' placeholder='Enter Phone Number' ref={PhoneRef} />
+                </div>
+                <div className={classes.button}>
+                    <button type='submit' >Submit</button>
+                </div>
             </div>
-            <div>
-                <label htmlFor='name'>Email</label>
-                <input id='name' type='email' placeholder='Enter email address' ref={EmailRef} />
-            </div>
-            <div>
-                <label htmlFor='name'>Phone No.</label>
-                <input id='name' type='number' placeholder='Enter Phone Number' ref={PhoneRef} />
-            </div>
-            <div className={classes.button}>
-            <button type='submit' >Submit</button>
-            </div>
-            </div>
-        </Form>
+        </form>
     )
 }
 

@@ -13,9 +13,8 @@ const Contact = () => {
             'Content-type': 'application/json'
           }
         })
-        const data = await response.json()
-        // console.log(info);
-    
+        const data = await response.json();
+          
       }
     return (
         <Fragment>

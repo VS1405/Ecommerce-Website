@@ -19,11 +19,14 @@ const HeaderPage = () => {
               <NavLink to="/About" activeClassName={classes.active} className='nav-link active'>About</NavLink>
             </li>
             <li>
-              <NavLink to="/Contact" activeClassName={classes.active} className='nav-link active'>Contact Us</NavLink>
+              <NavLink to="/Login" activeClassName={classes.active} className='nav-link active'>Login</NavLink>
             </li>
             <li>
-              <NavLink to="/Products" activeClassName={classes.active} >Products</NavLink>
+              <NavLink to="/Contact" className='nav-link active'>Contact Us</NavLink>
             </li>
+            {/* <li>
+              <NavLink to="/Products" activeClassName={classes.active} >Products</NavLink>
+            </li> */}
           </ul>
         </nav>
 

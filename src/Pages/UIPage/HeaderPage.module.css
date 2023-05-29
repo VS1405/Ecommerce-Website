@@ -28,11 +28,13 @@
   
  
   .header a:active, 
-  .header a:hover, 
-  .header a.active {
+  .header a:hover {
     border-bottom: 2px solid #e4d317;
   }
   
+  .header nav a.active{
+    border-bottom: 2px solid #e4d317;
+  }
   .button {
     justify-content: right;
   }

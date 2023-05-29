@@ -25,7 +25,7 @@ const Home = () => {
     <section>
       <div className={classes.div}>
         <h1>The Generics</h1>
-        <button>Get Our Latest Album</button>
+        <button className={classes.albumBtn}>Get Our Latest Album</button>
         <button className={classes['play-button']}>&#9658;</button>
       </div>
       <h2 className={classes.subtitle}>TOURS</h2>

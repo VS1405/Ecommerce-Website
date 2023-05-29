@@ -28,11 +28,16 @@
     font-size: 25px;
     /* font-weight: bold; */
 }
+.albumBtn:hover{
+    color: white;
+    background-color: #10cef4;
+}
 
 .play-button {
     border-radius: 50%;
     color: #10cef4
 }
+
 .play-button:hover {
     border-radius: 50%;
     color: white;
