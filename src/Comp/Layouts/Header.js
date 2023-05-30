@@ -19,11 +19,14 @@ const Header = (props) => {
               <NavLink to="/About" activeClassName={classes.active} >About</NavLink>
             </li>
             <li>
+              <NavLink to="/Login" activeClassName={classes.active} >Login</NavLink>
+            </li>
+            <li>
               <NavLink to="/Contact" activeClassName={classes.active} >Contact Us</NavLink>
               </li>
-            <li>
+            {/* <li>
               <NavLink to="/Products" activeClassName={classes.active} >Products</NavLink>
-              </li>
+              </li> */}
           </ul>
         </nav>
         <div className={classes.button}>

@@ -12,11 +12,11 @@
     column-gap: 20%;
   }
   
-  .header li {
+ .header li {
     list-style: none;
     display: inline-block;
   }
-  
+
   .header a {
     text-decoration: none;
     color: white;

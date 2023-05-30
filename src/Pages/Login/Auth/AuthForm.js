@@ -1,12 +1,12 @@
 import React, { useState, useContext, useRef, useEffect } from 'react';
-import { useNavigate, NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import classes from './AuthForm.module.css'
 
 import AuthContect from '../store/auth-context';
 
 const AuthForm = () => {
 
-  const history = useNavigate()
+  const history = useNavigate()   // its used to render the new component page 
 
   const AuthCtx = useContext(AuthContect)
 
@@ -62,7 +62,7 @@ const AuthForm = () => {
     })
       .then((data) => {
         AuthCtx.login(data.idToken)
-        history('/')
+        history('/Login/product')    // after useNavigate we can change the page by using path of component
       })
       .catch((error) => {
         alert(error.message)
@@ -77,7 +77,7 @@ const AuthForm = () => {
       <form onSubmit={submitHandler}>
         <div className={classes.control}>
           <label htmlFor='email'>Your Email</label>
-          <input type='email' id='email' required ref={EmailInputRef} />
+          <input type='email' id='email' required ref={EmailInputRef}  />
         </div>
         <div className={classes.control}>
           <label htmlFor='password'>Your Password</label>
@@ -86,17 +86,18 @@ const AuthForm = () => {
             id='password'
             required
             ref={PasswordInputRef}
+            
           />
         </div>
 
         <div className={classes.actions}>
-          {!isLoading && <button>{isLogin ? <NavLink to={'/Login/product'} className={classes.link}>Login</NavLink> : 'Create Account'}</button>}
+          {!isLoading &&
+           <button>  {isLogin ? 'Login': 'Create Account'}</button>}
           {isLoading && <p>Loading...</p>}
           <button
             type='button'
             className={classes.toggle}
-            onClick={switchAuthModeHandler}
-          >
+            onClick={switchAuthModeHandler}>
             {isLogin ? 'Create new account' : 'Login with existing account'}
           </button>
         </div>

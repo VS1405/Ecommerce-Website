@@ -18,12 +18,14 @@ function App() {
     <CartProvider>
     <Routes>
       <Route path={'/'} element= {<MainPage />} exact></Route>
-      <Route path={'/Store'} element= {<StorePage />} exact></Route>
-      <Route path={'/About'} element= {<AboutPage />} exact></Route>
-      <Route path={'/Login'} element={<AuthPage />}  exact></Route>
+      <Route path={'/Store'} element= {<StorePage />} ></Route>
+      <Route path={'/About'} element= {<AboutPage />} ></Route>
+      <Route path={'/Login'} element={<AuthPage />}  ></Route>
       <Route path={'/Contact'} element = {<Contact />} > </Route>
-      {AuthCtx.isLoggedIn && <Route path='/Login/*' element= {<ProductPage/>} ></Route> }
-      <Route path='*' element={<Navigate to={'/'} />}/>
+      {!AuthCtx.isLoggedIn && <Route path='/Login' element= {<AuthPage />} ></Route> }
+      {AuthCtx.isLoggedIn && <Route path='/Login/product' element= {<ProductPage />} exact ></Route> }
+      <Route path='*' element={<Navigate to={'/'} exact/>}/>    
+      {/* Navigate used instead of Rerendering  */}
     </Routes>
     </CartProvider>
   );

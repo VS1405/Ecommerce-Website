@@ -3,6 +3,9 @@
     color: white;
     border-style: none;
     font-family:bold ;
+    padding: 2px 5px;
+    font-weight: bold;
+   border: 1px solid transparent;
 }
 .btn:hover{
     background-color: #082d6e;
