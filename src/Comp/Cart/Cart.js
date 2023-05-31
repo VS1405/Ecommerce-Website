@@ -4,6 +4,7 @@ import CartItems from './CartItems';
 import ModalCart from '../UI/ModalCart';
 import classes from './Cart.module.css';
 import CartContext from '../../Store/Cart-context';
+import axios from 'axios'
 
 const cartElements = [
     {
@@ -34,10 +35,23 @@ const Cart = (props) => {
     const TotalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
     const hasProduct = cartCtx.title.length > 0
 
-    const Removehandler = id => {
-        cartCtx.removeItem(id)
-      }
-   
+    const Removehandler = async (id) => {
+        cartCtx.removeItem(id);
+
+        try{
+            await axios.delete(`https://crudcrud.com/api/42e9545f6c4b4f36a17aeb75c7f93fbb/cartItems/${id}`);
+      console.log('Item deleted from cart:', id);
+        }
+        catch (error){
+            console.error('Error deleting item from cart:', error);
+            if (error.response) {
+              console.log('Response data:', error.response.data);
+              console.log('Response status:', error.response.status);
+              console.log('Response headers:', error.response.headers);
+            }
+        }
+    };
+
     const cartItemList = <ul>
         {cartCtx.title.map((item) => (
             <li>
@@ -49,7 +63,7 @@ const Cart = (props) => {
                         price={item.price}
                         imageUrl={item.imageUrl}
                         amount={item.amount}
-                        onRemove = {Removehandler.bind(null, item.id)}
+                        onRemove={Removehandler.bind(null, item.id)}
                     />
                 </Row>
             </li>
@@ -69,7 +83,7 @@ const Cart = (props) => {
                     <span className={classes.price}>PRICE</span>
                     <span className={classes.quantity}>QUANTITY</span>
                 </div>
-                
+
                 {cartItemList}
 
                 <div className={classes.total}>
@@ -77,10 +91,10 @@ const Cart = (props) => {
                     <div>{TotalAmount}</div>
                 </div>
 
-                 <button className={classes.button} >
+                <button className={classes.button} >
                     PURCHASE
                 </button>
-                
+
             </div>
         </ModalCart>
 

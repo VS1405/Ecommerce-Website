@@ -5,7 +5,6 @@ import MainPage from './Comp/Layouts/MainPage';
 import StorePage from './Pages/Store/StorePage';
 import AboutPage from './Pages/About/AboutPage';
 import Contact from './Pages/ContactPage/Contact';
-import ProductPage from './Pages/ProductsPage/ProductPage';
 import AuthPage from './Pages/Login/AuthPage'
 import AuthContect from './Pages/Login/store/auth-context';
 
@@ -18,14 +17,13 @@ function App() {
     <CartProvider>
     <Routes>
       <Route path={'/'} element= {<MainPage />} exact></Route>
-      <Route path={'/Store'} element= {<StorePage />} ></Route>
       <Route path={'/About'} element= {<AboutPage />} ></Route>
       <Route path={'/Login'} element={<AuthPage />}  ></Route>
       <Route path={'/Contact'} element = {<Contact />} > </Route>
       {!AuthCtx.isLoggedIn && <Route path='/Login' element= {<AuthPage />} ></Route> }
-      {AuthCtx.isLoggedIn && <Route path='/Login/product' element= {<ProductPage />} exact ></Route> }
-      <Route path='*' element={<Navigate to={'/'} exact/>}/>    
-      {/* Navigate used instead of Rerendering  */}
+      {AuthCtx.isLoggedIn && <Route path='/Login/product' element= {<StorePage />} exact ></Route> }
+      <Route path='*' element={<Navigate to={'/'} exact/>}/>  
+      {/* Navigate used when the path of url wrong that time home page will re-render  */}
     </Routes>
     </CartProvider>
   );

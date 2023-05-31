@@ -10,23 +10,17 @@ const Header = (props) => {
         <nav>
           <ul>
             <li>
-            <NavLink to="/" activeClassName={classes.active} >Home</NavLink>
+            <NavLink to="/" activeclassname={classes.active} >Home</NavLink>
             </li>
             <li>
-              <NavLink to="/Store" activeClassName={classes.active} >Store</NavLink>
+              <NavLink to="/About" activeclassname={classes.active} >About</NavLink>
             </li>
             <li>
-              <NavLink to="/About" activeClassName={classes.active} >About</NavLink>
+              <NavLink to="/Login" activeclassname={classes.active} >Login</NavLink>
             </li>
             <li>
-              <NavLink to="/Login" activeClassName={classes.active} >Login</NavLink>
-            </li>
-            <li>
-              <NavLink to="/Contact" activeClassName={classes.active} >Contact Us</NavLink>
+              <NavLink to="/Contact" activeclassname={classes.active} >Contact Us</NavLink>
               </li>
-            {/* <li>
-              <NavLink to="/Products" activeClassName={classes.active} >Products</NavLink>
-              </li> */}
           </ul>
         </nav>
         <div className={classes.button}>

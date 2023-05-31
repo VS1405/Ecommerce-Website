@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { Fragment } from 'react'
 import { Container, Row } from 'react-bootstrap'
 import ListShow from './ListShow';
 import classes from './Item.module.css'
@@ -38,6 +38,7 @@ const AvailableItem = () => {
   const listOdProduct = productsArr.map(item =>
     <ListShow
       id={item.id}
+      key={item.id}
       title={item.title}
       price={item.price}
       imageUrl={item.imageUrl}
@@ -45,15 +46,14 @@ const AvailableItem = () => {
   )
 
   return (
-    <>
+    <Fragment>
       <Container className={classes.container} id='Home'>
         <Row xs={1} md={2} className="g-4 mt-5">
           {listOdProduct}
         </Row>
-
       </Container>
       <Footer />
-    </>
+    </Fragment>
   )
 }
 

@@ -1,7 +1,6 @@
-import React, { useState, useContext, useRef, useEffect } from 'react';
+import React, { useState, useContext, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import classes from './AuthForm.module.css'
-
+import classes from './AuthForm.module.css';
 import AuthContect from '../store/auth-context';
 
 const AuthForm = () => {
@@ -62,6 +61,7 @@ const AuthForm = () => {
     })
       .then((data) => {
         AuthCtx.login(data.idToken)
+        
         history('/Login/product')    // after useNavigate we can change the page by using path of component
       })
       .catch((error) => {

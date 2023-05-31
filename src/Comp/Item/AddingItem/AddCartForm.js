@@ -1,13 +1,17 @@
 import React from 'react'
-import {Button} from 'react-bootstrap'
 import classes from './AddCartForm.module.css'
+
+
+
 const AddCartForm = (props) => {
 
     
     const submitFormHandler =(event)=>{
-        event.preventDefault()
+        event.preventDefault();
         const amountNumber = +('1')
+        
         props.onAddCart(amountNumber);
+
     }
     return (
         <form onSubmit={submitFormHandler}>

@@ -1,14 +1,31 @@
-import React, {Fragment, useContext} from 'react';
+import React, {Fragment, useContext, useState, useEffect} from 'react';
 import { Button, Col, Image } from 'react-bootstrap'
 import classes from './CartsItem.module.css'
 import CartContext from '../../Store/Cart-context';
+import axios from 'axios'
 
 
 const CartItems = (props) => {
 
   const price = `$${props.price.toFixed(2)}`;
 
- 
+  const [cartItems, setCartItems] = useState([]);
+
+  useEffect(() => {
+      const fetchCartItems = async () => {
+        try {
+          const response = await axios.get(
+            'https://crudcrud.com/api/7e580cbf3eb0490d96d570d2e0f287e7/cartItems'
+          );
+          setCartItems(response.data);
+        } catch (error) {
+          console.error('Error fetching cart items:', error);
+        }
+      };
+  
+      fetchCartItems();
+    }, [])
+
 
   return (
     <Fragment>
