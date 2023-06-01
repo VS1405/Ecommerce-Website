@@ -4,7 +4,8 @@ const AuthContect = React.createContext({
     token: '',
     isLoggedIn: false,
     login: (token) => { },
-    logout: () => { }
+    logout: () => { },
+    clearCartItems: () => {},
 })
 
 export const AuthContextProvider = (props) => {
@@ -24,14 +25,19 @@ export const AuthContextProvider = (props) => {
         setToken(null)
     }
 
-    // setTimeout(logoutHandler, 60000);
+    const clearCartItems = () => {
+        // Implement your logic to clear cart items here
+        //you can update the cart items in the local storage
+        localStorage.removeItem('token');
+      };
     
 
     const ContextValue = {
         token: token,
         isLoggedIn: userIsLoggedIn,
         login: loginHandler,
-        logout: logoutHandler
+        logout: logoutHandler,
+        clearCartItems: clearCartItems,
     }
 
     return <AuthContect.Provider value={ContextValue}>

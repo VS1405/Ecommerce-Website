@@ -18,6 +18,15 @@ const AuthForm = () => {
   const switchAuthModeHandler = () => {
     setIsLogin((prevState) => !prevState);
   };
+
+  const clearCartItems = AuthCtx.clearCartItems;
+  
+  // const clearCartItems = () => {
+  //   // Clear the cart items when a new user logs in
+  //   AuthCtx.clearCartItems();
+  // };
+
+
   const submitHandler = (e) => {
     e.preventDefault();
 
@@ -61,7 +70,7 @@ const AuthForm = () => {
     })
       .then((data) => {
         AuthCtx.login(data.idToken)
-        
+         clearCartItems(); // Call the clearCartItems function here
         history('/Login/product')    // after useNavigate we can change the page by using path of component
       })
       .catch((error) => {
